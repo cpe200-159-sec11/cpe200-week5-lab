@@ -10,10 +10,10 @@ public class User {
     public User() {
     }
 
-    public boolean setUserName(String name) {
+    public String setUserName(String name) throws RuntimeException{
         int a = 0;
         if (name.length() < 8) {
-            return false;
+            return String.valueOf(null);
         }
         if (name.length() >= 8) {
             a++;
@@ -24,20 +24,33 @@ public class User {
         if (name.matches("(^[A-Z]+)([a-zA-Z0-9]*)")) {
             a++;
         }
+        if(name.isEmpty())
+        {
+            throw new RuntimeException();
+        }
 
         if (a == 2) {
-            userName = name;
-            return true;
+            if(userName == null)
+            {
+                userName = name;
+                return null;
+            }
+            else{
+                String ant =userName;
+                userName = name;
+                return ant;
+            }
+
 
         } else {
-            return false;
+            throw new RuntimeException();
         }
     }
 
-    public boolean setPassword(String name) {
+    public int setPassword(String name) throws RuntimeException {
         int a = 0;
         if (name.length() < 12) {
-            return false;
+            return Integer.getInteger(null);
         }
         if (name.length() >= 12) {
             a++;
@@ -51,11 +64,13 @@ public class User {
         if (name.matches("(.*)([A-Z]+)(.*)")) {
             a++;
         }
+
         if (a == 4) {
             password = name;
-            return true;
+
+            return name.length();
         } else {
-            return false;
+            throw new RuntimeException();
         }
     }
 
@@ -67,4 +82,5 @@ public class User {
     public String getPassword() {
         return password;
     }
+
 }
