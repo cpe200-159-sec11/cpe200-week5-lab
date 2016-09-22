@@ -8,22 +8,43 @@ public class User {
     public String password;
 
     public User() {
+
     }
 
     public String setUserName(String name) {
-        return null;
-    }
 
-    public int setPassword(String name) {
-        return 0;
+        String condition = "([A-Za-z]+)([A-Za-z\\d]+)";
+
+        String prev_name = this.userName;
+
+        if(name.length() < 8){
+            throw new RuntimeException();
+        }
+        if (name.matches(condition))  {
+            this.userName = name;
+            return prev_name;
+        }else {
+
+            throw new RuntimeException();
+        }
+    }
+    public int setPassword(String name)  {
+        if( name.length() < 12 || name.matches("([^A-Z]+)") || name.matches("([^a-z]+)") || name.matches("([^0-9]+)"))
+        {
+            return Integer.parseInt(null);}
+        else {
+            this.password = name;
+            return password.length();
+        }
+
     }
 
     public String getUserName() {
 
-        return null;
+        return this.userName;
     }
 
     public String getPassword() {
-        return null;
+        return this.password;
     }
 }
