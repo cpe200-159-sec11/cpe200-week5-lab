@@ -38,7 +38,7 @@ public class Users {
     {
         if(userList.isEmpty())
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         for(int i =0 ; i < userList.size() ; i++)
         {

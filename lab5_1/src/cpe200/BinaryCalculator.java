@@ -31,7 +31,7 @@ public class BinaryCalculator {
         double sum = firstdouble + seconddobule;
         if(firstdouble <0 || seconddobule <0)
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         double hold = (double)Math.round(sum * 100000d)/100000d;
         if (hold*10%10 == 0)
@@ -54,7 +54,7 @@ public class BinaryCalculator {
         double sum = firstdouble - seconddobule;
         if(firstdouble <0 || seconddobule <0)
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         double hold = (double)Math.round(sum * 100000d)/100000d;
         if (hold*10%10 == 0)
@@ -77,7 +77,7 @@ public class BinaryCalculator {
         double sum = firstdouble * seconddobule;
         if(firstdouble <0 || seconddobule <0)
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         double hold = (double)Math.round(sum * 100000d)/100000d;
         if(firstdouble == 0 || seconddobule == 0)
@@ -105,7 +105,7 @@ public class BinaryCalculator {
         double seconddobule = Double.parseDouble(second);
         if(firstdouble <0 || seconddobule <0)
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         if (seconddobule == 0)
         {
@@ -134,7 +134,7 @@ public class BinaryCalculator {
         double sum = Math.pow(firstdouble,seconddobule);
         if(firstdouble <0 || seconddobule <0)
         {
-            throw new ArithmeticException();
+            throw new RuntimeException();
         }
         double hold = (double)Math.round(sum * 100000d)/100000d;
         if (hold*10%10 == 0)
